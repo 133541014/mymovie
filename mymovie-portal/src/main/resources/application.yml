@@ -1,0 +1,13 @@
+server:
+  port: 8082
+spring:
+  dubbo:
+    application:
+      name: mymovie-portal
+    scan: com.chao.mymovie.portal.service  # dubbo服务调用者所在的包
+    registry:
+      address: zookeeper://127.0.0.1:2181   # zookeeper注册中心的地址
+    consumer:
+      timeout: 1000
+      check: true                          # 服务启动时检查被调用服务是否可用
+      retries: 2                           # 服务调用重试次数
